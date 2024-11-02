@@ -1,7 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cln1ruxrb0r05"]
 
-[ext_resource type="Material" uid="uid://br1rvq8u73vd5" path="res://materials/red.tres" id="1_o2e2t"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mmc3"]
+albedo_color = Color(0.635294, 0, 0, 1)
 
 [node name="CSGBox3D" type="CSGBox3D"]
-material_override = ExtResource("1_o2e2t")
+material_override = SubResource("StandardMaterial3D_8mmc3")
 use_collision = true

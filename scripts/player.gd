@@ -26,7 +26,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * xSens))
 		pivot.rotate_x(clamp((deg_to_rad(-event.relative.y * ySens)), -30, 90))
-		print_debug(pivot.rotation.x)
 		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-70), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:

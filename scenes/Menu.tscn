@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b161uewbdu7li"]
+
+[ext_resource type="Texture2D" uid="uid://ijwpmqccp8ej" path="res://scenes/Screenshot 2023-10-26 114859.png" id="1_pbatc"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-1, -1)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 10.0
+offset_top = -2.0
+offset_right = 941.0
+offset_bottom = 920.0
+texture = ExtResource("1_pbatc")

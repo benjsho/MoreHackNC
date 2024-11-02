@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("Mine") and canMine:
-		resources = resources + 1;
+		resources += 1;
 		updateResources();
 
 	# Get the input direction and handle the movement/deceleration.

@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0ltesqphdv4n"]
+[gd_scene load_steps=8 format=3 uid="uid://cwf0sojhmilsq"]
 
-[ext_resource type="Material" uid="uid://rk76xmrvwd81" path="res://materials/grass.tres" id="1_qxy0m"]
+[ext_resource type="Material" path="res://materials/grass.tres" id="1_qxy0m"]
 [ext_resource type="PackedScene" uid="uid://jgutj4csilqx" path="res://scenes/player.tscn" id="2_xtn6o"]
 [ext_resource type="PackedScene" uid="uid://cln1ruxrb0r05" path="res://scenes/csg_box_3d.tscn" id="3_pflhg"]
-[ext_resource type="PackedScene" uid="uid://dbspeowcgnc1x" path="res://scenes/rock.tscn" id="4_gh8ls"]
+[ext_resource type="PackedScene" path="res://scenes/rock.tscn" id="4_gh8ls"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2f72h"]
 sky_top_color = Color(0, 0, 0, 1)

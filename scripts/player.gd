@@ -11,6 +11,10 @@ var pickaxeLevel = 1;
 var canMine: bool = false
 var canTalk: bool = false
 
+var jerryLevel = 0;
+var dealLevel = 0;
+var npcTalk: int = 0;
+
 @onready var pivot: Node3D = $Pivot
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer
 
@@ -48,9 +52,21 @@ func _physics_process(delta: float) -> void:
 		updateResources();
 
 	if Input.is_action_just_pressed("Interact") and canTalk:
-		Dialogic.start("introWithJerry")
-	else:
-		print_debug(canTalk)
+		match npcTalk:
+			1:
+				match jerryLevel:
+					0:
+						Dialogic.start("introWithJerry")
+						jerryLevel += 1;
+					1:
+						pass
+			2:
+				match dealLevel:
+					0:
+						print_debug("Talking with the guy")
+					1: 
+						pass
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -92,8 +108,22 @@ func mine() -> void:
 func _on_npc_area_entered(area: Area3D) -> void:
 	if (area.is_in_group("player")):
 		canTalk = true;
+		npcTalk = 1
 
 
 func _on_npc_area_exited(area: Area3D) -> void:
 	if (area.is_in_group("player")):
 		canTalk = false;
+		npcTalk = 1
+
+
+
+func _on_npc_2_area_exited(area:Area3D) -> void:
+	if (area.is_in_group("player")):
+		canTalk = true;
+		npcTalk = 2
+
+func _on_npc_2_area_entered(area:Area3D) -> void:
+	if (area.is_in_group("player")):
+		canTalk = false;
+		npcTalk = 2

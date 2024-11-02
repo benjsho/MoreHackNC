@@ -1,14 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwf0sojhmilsq"]
+[gd_scene load_steps=14 format=3 uid="uid://d0ltesqphdv4n"]
 
-[ext_resource type="Material" path="res://materials/grass.tres" id="1_qxy0m"]
+[ext_resource type="Material" uid="uid://rk76xmrvwd81" path="res://materials/grass.tres" id="1_qxy0m"]
 [ext_resource type="PackedScene" uid="uid://jgutj4csilqx" path="res://scenes/player.tscn" id="2_xtn6o"]
-[ext_resource type="PackedScene" path="res://scenes/rock.tscn" id="4_gh8ls"]
-[ext_resource type="PackedScene" path="res://scenes/hut.tscn" id="5_kqcsi"]
-[ext_resource type="PackedScene" uid="uid://do410cgmgogq2" path="res://scenes/NPC.tscn" id="5_l1535"]
-[ext_resource type="PackedScene" path="res://materials/hut_2.tscn" id="6_bbssv"]
-[ext_resource type="PackedScene" path="res://materials/hut_3.tscn" id="7_lnlf8"]
-[ext_resource type="PackedScene" path="res://materials/hut_4.tscn" id="8_y5d52"]
-[ext_resource type="PackedScene" path="res://materials/rore.tscn" id="9_xr1p1"]
+[ext_resource type="PackedScene" uid="uid://dbspeowcgnc1x" path="res://scenes/rock.tscn" id="4_gh8ls"]
+[ext_resource type="PackedScene" uid="uid://df8f7qoibyt8m" path="res://scenes/hut.tscn" id="5_kqcsi"]
+[ext_resource type="PackedScene" uid="uid://bnm866ym2yb4r" path="res://scenes/NPC.tscn" id="5_l1535"]
+[ext_resource type="PackedScene" uid="uid://dsmlhm410dsum" path="res://scenes/hut_2.tscn" id="6_bbssv"]
+[ext_resource type="PackedScene" uid="uid://bpm3jl0efuge8" path="res://scenes/hut_3.tscn" id="7_lnlf8"]
+[ext_resource type="PackedScene" uid="uid://5kp7mkldledk" path="res://scenes/hut_4.tscn" id="8_y5d52"]
+[ext_resource type="PackedScene" uid="uid://cslf6ajopqrwk" path="res://scenes/rore.tscn" id="9_xr1p1"]
+[ext_resource type="PackedScene" uid="uid://dulb1myyv4gdf" path="res://wall.tscn" id="10_feepy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2f72h"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -83,6 +84,38 @@ transform = Transform3D(1.01336, 0, -1.23963, 0, 1.60112, 0, 1.23963, 0, 1.01336
 
 [node name="rore3" parent="." instance=ExtResource("9_xr1p1")]
 transform = Transform3D(1.01336, 0, -1.23963, 0, 1.60112, 0, 1.23963, 0, 1.01336, -21.9594, 0.554839, -15.0262)
+
+[node name="Wall" parent="." instance=ExtResource("10_feepy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0943, 1.21624, 18.2668)
+
+[node name="Wall2" parent="." instance=ExtResource("10_feepy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.05822, 27.0943, 1.21624, -1.54231)
+
+[node name="Wall4" parent="." instance=ExtResource("10_feepy")]
+transform = Transform3D(1, -2.91038e-11, -1.45519e-11, 2.91038e-11, 1, -5.39444e-11, 2.91038e-11, 4.30731e-11, 0.85844, 27.0943, 1.21624, -19.5658)
+
+[node name="Wall5" parent="." instance=ExtResource("10_feepy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5046, 1.21624, 18.2668)
+
+[node name="Wall6" parent="." instance=ExtResource("10_feepy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.07877, -26.5046, 1.21624, -1.54231)
+
+[node name="Wall7" parent="." instance=ExtResource("10_feepy")]
+transform = Transform3D(1, -2.91038e-11, -1.45519e-11, 2.91038e-11, 1, -5.39444e-11, 2.91038e-11, 4.30731e-11, 0.85844, -26.5046, 1.21624, -19.5658)
+
+[node name="Wall3" parent="." instance=ExtResource("10_feepy")]
+transform = Transform3D(-0.000243347, -0.000419705, -1.41027, -0.000478272, 1.00105, -0.000591107, 1.00061, 0.000478378, -0.000343267, -11.648, 1.21624, -26.5845)
+
+[node name="Wall9" parent="." instance=ExtResource("10_feepy")]
+transform = Transform3D(-0.000243337, -0.000419674, -0.858827, -0.000478252, 1.00098, -0.000359973, 1.00057, 0.000478343, -0.000209043, 17.1805, 1.21624, -26.5845)
+
+[node name="Wall8" parent="." instance=ExtResource("10_feepy")]
+transform = Transform3D(-0.000243358, -0.000419738, -2.66514, -0.000478294, 1.00113, -0.00111708, 1.00065, 0.000478416, -0.000648708, 0.0865583, 1.21624, 28.8865)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.000962327, -0.00165969, -3.39643, -0.00189135, 3.95858, -0.00142357, 3.95691, 0.00189171, -0.00082672, 5.69791, -1.42735, -30.4925)
+material_override = ExtResource("1_qxy0m")
+size = Vector3(1, 1, 1.84595)
 
 [connection signal="area_entered" from="Rock" to="Player" method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rock" to="Player" method="_on_rock_area_exited"]

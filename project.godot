@@ -56,7 +56,7 @@ text/autopauses={}
 
 [display]
 
-window/size/mode=3
+window/size/resizable=false
 
 [dotnet]
 

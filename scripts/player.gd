@@ -12,6 +12,7 @@ var canMine: bool = false
 var canTalk: bool = false
 
 @onready var pivot: Node3D = $Pivot
+@onready var animPlayer: AnimationPlayer = $AnimationPlayer
 
 @export_category("Sensitivity")
 @export var xSens: float = 0.5
@@ -43,8 +44,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("Mine") and canMine:
-		mine()
-		updateResources();
+		if !animPlayer.is_playing():
+			animPlayer.play("pickaxeSwing")
+			updateResources();
 	if Input.is_action_just_pressed("Interact") and canTalk:
 		Dialogic.start("talktoNPC"); 
 
@@ -89,7 +91,7 @@ func _on_npc_area_exited(area: Area3D) -> void:
 func mine() -> void:
 	match pickaxeLevel:
 		1:
-			resources += 0.01;
+			resources += 0.001;
 		2:
 			resources += 1;
 		3:

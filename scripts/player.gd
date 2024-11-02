@@ -48,7 +48,9 @@ func _physics_process(delta: float) -> void:
 		updateResources();
 
 	if Input.is_action_just_pressed("Interact") and canTalk:
-		Dialogic.start("talktoNPC")
+		Dialogic.start("introWithJerry")
+	else:
+		print_debug(canTalk)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

@@ -1,22 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://db5mdwhs46d0"]
+[gd_scene load_steps=3 format=3 uid="uid://cl6l7vinfjrsq"]
 
 [ext_resource type="Script" path="res://scripts/menu_nc.gd" id="1_4tjhh"]
 [ext_resource type="Texture2D" uid="uid://ijwpmqccp8ej" path="res://scenes/Screenshot 2023-10-26 114859.png" id="2_6748u"]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(-1, -1)
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_4tjhh")
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
-
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 103.0
-offset_top = -453.0
-offset_right = 1034.0
-offset_bottom = 469.0
+layout_mode = 0
+offset_left = -307.0
+offset_top = -129.0
+offset_right = 624.0
+offset_bottom = 793.0
+scale = Vector2(1.94451, 1)
 texture = ExtResource("2_6748u")
 
 [node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
 offset_left = 309.0
 offset_top = 302.0
 offset_right = 776.0

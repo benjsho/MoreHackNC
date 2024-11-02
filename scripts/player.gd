@@ -5,11 +5,14 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 var resources = 0;
+var pickaxeLevel = 1;
 @onready var resourceCounter = $UI/ResourceLabel
 
 var canMine: bool = false
+var canTalk: bool = false
 
 @onready var pivot: Node3D = $Pivot
+@onready var animPlayer: AnimationPlayer = $AnimationPlayer
 
 @export_category("Sensitivity")
 @export var xSens: float = 0.5
@@ -23,7 +26,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * xSens))
 		pivot.rotate_x(clamp((deg_to_rad(-event.relative.y * ySens)), -30, 90))
-		pivot.rotation.x = clamp(pivot.rotation.x, -90, 90)
+		print_debug(pivot.rotation.x)
+		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-70), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -41,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("Mine") and canMine:
-		resources += 1;
+		animPlayer.play("pickaxeSwing")
 		updateResources();
 
 	# Get the input direction and handle the movement/deceleration.
@@ -58,22 +62,34 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_rock_area_entered(area:Area3D) -> void:
-	canMine = true;
-	print_debug("Can mine")
+	if (area.is_in_group("player")):
+		canMine = true;
+		print_debug("Can mine")
 
 
 func _on_rock_area_exited(area:Area3D) -> void:
-	canMine = false;
-	print_debug("Can't mine")
+	if (area.is_in_group("player")):
+		canMine = false;
+		print_debug("Can't mine")
 		
 func updateResources() -> void:
 	resourceCounter.text = "Resources: " + str(resources)
-	
+
+func mine() -> void:
+	match pickaxeLevel:
+		1:
+			resources += 0.01
+		2:
+			resources += 10
+		3:
+			resources += 500
 
 
 func _on_npc_area_entered(area: Area3D) -> void:
-	pass # Replace with function body.
+	if (area.is_in_group("player")):
+		canTalk = true;
 
 
 func _on_npc_area_exited(area: Area3D) -> void:
-	pass # Replace with function body.
+	if (area.is_in_group("player")):
+		canTalk = false;

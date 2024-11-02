@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmacef2euyjtn"]
+
+[ext_resource type="Texture2D" uid="uid://bxcsdljfgfq01" path="res://materials/mystery_apple_sprite.png" id="1_2kcjj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cexfa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ld7my"]
+
+[node name="Area3D" type="Area3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(4.5468, 0, 0, 0, 4.5468, 0, 0, 0, 4.5468, 0, 0, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_2kcjj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.706483, 0, 0, 0, 0.706483, 0, 0, 0, 0.706483, 0, 0, 0)
+shape = SubResource("BoxShape3D_cexfa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.82649, 0, 0, 0, 1.82649, 0, 0, 0, 1.82649, 0, 0, 0)
+shape = SubResource("BoxShape3D_ld7my")

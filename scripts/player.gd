@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("Mine") and canMine:
-		resources += 1;
+		resources = resources + 1;
 		updateResources();
 
 	# Get the input direction and handle the movement/deceleration.
@@ -58,15 +58,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_rock_area_entered(area:Area3D) -> void:
-	if area.is_in_group("player"):
-		canMine = true;
-		print_debug("Can mine")
+	canMine = true;
+	print_debug("Can mine")
 
 
 func _on_rock_area_exited(area:Area3D) -> void:
-	if area.is_in_group("player"):
-		canMine = false;
-		print_debug("Can't mine")
+	canMine = false;
+	print_debug("Can't mine")
 		
 func updateResources() -> void:
 	resourceCounter.text = "Resources: " + str(resources)

@@ -44,3 +44,4 @@ light_energy = 4.011
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9919, 0.703185, 2.81953)
 
 [connection signal="area_entered" from="Rock" to="Player" method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rock" to="Player" method="_on_rock_area_exited"]

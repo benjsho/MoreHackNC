@@ -23,12 +23,9 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={}
 directories/dtl_directory={
+"talktoNPC": "res://talktoNPC.dtl",
 "timelinetest": "res://timelinetest.dtl"
 }
-
-[display]
-
-window/size/mode=3
 
 [dotnet]
 

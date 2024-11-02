@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://db5mdwhs46d0"]
+[gd_scene load_steps=3 format=3 uid="uid://cl6l7vinfjrsq"]
 
-[ext_resource type="Script" path="res://scenes/menu_nc.gd" id="1_4tjhh"]
+[ext_resource type="Script" path="res://scripts/menu_nc.gd" id="1_4tjhh"]
 [ext_resource type="Texture2D" uid="uid://ijwpmqccp8ej" path="res://scenes/Screenshot 2023-10-26 114859.png" id="2_6748u"]
 
 [node name="Node2D" type="Node2D"]

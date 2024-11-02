@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c72cqa8yxh8wd"]
+
+[ext_resource type="PackedScene" uid="uid://cmd4cyaa36con" path="res://models/booltonium.glb" id="1_wswmr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r478k"]
+size = Vector3(1.13867, 1, 1.13629)
+
+[node name="booltonium" instance=ExtResource("1_wswmr")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.584958)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(4.16856, 0, 0, 0, 4.16856, 0, 0, 0, 4.16856, -0.567991, 1.09252, 1.36706)
+shape = SubResource("BoxShape3D_r478k")

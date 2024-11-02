@@ -5,9 +5,11 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 var resources = 0;
+var pickaxeLevel = 1;
 @onready var resourceCounter = $UI/ResourceLabel
 
 var canMine: bool = false
+var canTalk: bool = false
 
 @onready var pivot: Node3D = $Pivot
 
@@ -41,8 +43,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("Mine") and canMine:
-		resources = resources + 1;
+		mine()
 		updateResources();
+	if Input.is_action_just_pressed("Interact") and canTalk:
+		Dialogic.start("talktoNPC"); 
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -58,14 +62,36 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_rock_area_entered(area:Area3D) -> void:
-	canMine = true;
-	print_debug("Can mine")
+	if area.is_in_group("player"):
+		canMine = true;
+		print_debug("Can mine")
 
 
 func _on_rock_area_exited(area:Area3D) -> void:
-	canMine = false;
-	print_debug("Can't mine")
+	if area.is_in_group("player"):
+		canMine = false;
+		print_debug("Can't mine")
 		
 func updateResources() -> void:
 	resourceCounter.text = "Resources: " + str(resources)
 	
+
+
+func _on_npc_area_entered(area: Area3D) -> void:
+	if area.is_in_group("player"):
+		canTalk = true
+
+
+func _on_npc_area_exited(area: Area3D) -> void:
+	if area.is_in_group("player"):
+		canTalk = false
+
+func mine() -> void:
+	match pickaxeLevel:
+		1:
+			resources += 0.01;
+		2:
+			resources += 1;
+		3:
+			resources += 5;
+		

@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwf0sojhmilsq"]
+[gd_scene load_steps=12 format=3 uid="uid://d0ltesqphdv4n"]
 
-[ext_resource type="Material" path="res://materials/grass.tres" id="1_qxy0m"]
+[ext_resource type="Material" uid="uid://rk76xmrvwd81" path="res://materials/grass.tres" id="1_qxy0m"]
 [ext_resource type="PackedScene" uid="uid://jgutj4csilqx" path="res://scenes/player.tscn" id="2_xtn6o"]
-[ext_resource type="PackedScene" uid="uid://cln1ruxrb0r05" path="res://scenes/csg_box_3d.tscn" id="3_pflhg"]
-[ext_resource type="PackedScene" path="res://scenes/rock.tscn" id="4_gh8ls"]
+[ext_resource type="PackedScene" uid="uid://dbspeowcgnc1x" path="res://scenes/rock.tscn" id="4_gh8ls"]
+[ext_resource type="PackedScene" uid="uid://df8f7qoibyt8m" path="res://scenes/hut.tscn" id="5_kqcsi"]
+[ext_resource type="PackedScene" uid="uid://bnm866ym2yb4r" path="res://scenes/NPC.tscn" id="5_l1535"]
+[ext_resource type="PackedScene" uid="uid://dsmlhm410dsum" path="res://materials/hut_2.tscn" id="6_bbssv"]
+[ext_resource type="PackedScene" uid="uid://bpm3jl0efuge8" path="res://materials/hut_3.tscn" id="7_lnlf8"]
+[ext_resource type="PackedScene" uid="uid://5kp7mkldledk" path="res://materials/hut_4.tscn" id="8_y5d52"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2f72h"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -33,9 +37,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0444277, 0.933555, 0.146581
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0s4h5")
 
-[node name="CSGBox3D2" parent="." instance=ExtResource("3_pflhg")]
-transform = Transform3D(4.97565, 0, 0, 0, 4.97565, 0, 0, 0, 4.97565, 10.6259, 2.37472, -4.32904)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.45203, 0.892003, 0, -0.892003, 0.45203, 0, 6.18871, 0)
 light_energy = 4.011
@@ -43,5 +44,41 @@ light_energy = 4.011
 [node name="Rock" parent="." instance=ExtResource("4_gh8ls")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9919, 0.703185, 2.81953)
 
+[node name="Rock2" parent="." instance=ExtResource("4_gh8ls")]
+transform = Transform3D(-0.250951, -0.000668282, -0.967999, -0.0010794, 0.999999, -0.000410528, 0.967999, 0.000941826, -0.250952, -2.48529, 0.703185, -14.5044)
+
+[node name="Rock3" parent="." instance=ExtResource("4_gh8ls")]
+transform = Transform3D(0.539418, 0, -0.842038, 0, 1, 0, 0.842038, 0, 0.539418, -14.9919, 0.703185, 13.3383)
+
+[node name="NPC" parent="." instance=ExtResource("5_l1535")]
+transform = Transform3D(0.254281, 0, 0, 0, 0.254281, 0, 0, 0, 0.254281, -1.74623, 1.12697, 19.1472)
+
+[node name="hut" parent="." instance=ExtResource("5_kqcsi")]
+transform = Transform3D(0.569426, 0, -0.462793, 0, 0.733773, 0, 0.462793, 0, 0.569426, 12.4286, 2.76393, 14.1535)
+
+[node name="hut2" parent="." instance=ExtResource("5_kqcsi")]
+transform = Transform3D(-0.476707, -0.000419599, 0.557829, -7.40793e-05, 0.733773, 0.000488627, -0.557829, 0.000261115, -0.476707, -12.014, 2.76393, -13.899)
+
+[node name="hut3" parent="." instance=ExtResource("6_bbssv")]
+transform = Transform3D(0.0724939, 0, -1.17118, 0, 1.17342, 0, 1.17118, 0, 0.0724939, -4.20671, 4.74472, 22.1215)
+
+[node name="hut4" parent="." instance=ExtResource("7_lnlf8")]
+transform = Transform3D(0.604023, 0, 0.42932, 0, 0.741053, 0, -0.42932, 0, 0.604023, 16.0664, 2.78473, -13.4459)
+
+[node name="hut7" parent="." instance=ExtResource("7_lnlf8")]
+transform = Transform3D(-0.0842237, 0, 0.736252, 0, 0.741053, 0, -0.736252, 0, -0.0842237, 4.34218, 2.78473, -21.0692)
+
+[node name="hut5" parent="." instance=ExtResource("8_y5d52")]
+transform = Transform3D(-0.463665, 0, -0.455817, 0, 0.650195, 0, 0.455817, 0, -0.463665, -22.5168, 1.99358, 16.5318)
+
+[node name="hut6" parent="." instance=ExtResource("8_y5d52")]
+transform = Transform3D(0.648828, 0, -0.0421398, 0, 0.650195, 0, 0.0421398, 0, 0.648828, 12.5463, 1.99358, -0.671295)
+
 [connection signal="area_entered" from="Rock" to="Player" method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rock" to="Player" method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rock2" to="Player" method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rock2" to="Player" method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rock3" to="Player" method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rock3" to="Player" method="_on_rock_area_exited"]
+[connection signal="area_entered" from="NPC" to="Player" method="_on_npc_area_entered"]
+[connection signal="area_exited" from="NPC" to="Player" method="_on_npc_area_exited"]

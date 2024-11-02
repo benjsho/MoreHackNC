@@ -8,6 +8,7 @@
 
 [node name="NPC" type="Sprite3D" parent="."]
 billboard = 2
+texture_filter = 0
 texture = ExtResource("1_8lta1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

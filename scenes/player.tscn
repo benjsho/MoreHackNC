@@ -29,4 +29,4 @@ spring_length = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.624012, 0, -0.908134)
 
 [node name="pickaxe" parent="Holder" instance=ExtResource("2_6pxmt")]
-transform = Transform3D(-8.0427e-09, 0, 0.183996, 0, 0.183996, 0, -0.183996, 0, -8.0427e-09, 0, 0, 0)
+transform = Transform3D(-0.00025594, -0.000567085, 0.183994, 0.000354215, 0.183994, 0.000567577, -0.183995, 0.000355002, -0.000254848, 0, 0, 0)

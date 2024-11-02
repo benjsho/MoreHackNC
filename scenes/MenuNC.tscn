@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://db5mdwhs46d0"]
+
+[ext_resource type="Script" path="res://scenes/menu_nc.gd" id="1_4tjhh"]
+[ext_resource type="Texture2D" uid="uid://ijwpmqccp8ej" path="res://scenes/Screenshot 2023-10-26 114859.png" id="2_6748u"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-1, -1)
+script = ExtResource("1_4tjhh")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 935.0
+offset_bottom = 924.0
+texture = ExtResource("2_6748u")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 309.0
+offset_top = 302.0
+offset_right = 776.0
+offset_bottom = 610.0
+text = "press any key
+"

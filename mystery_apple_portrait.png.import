@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrr4eq4musaq"
-path="res://.godot/imported/boss_apple_portrait.png-0249bda9a4dbc7c7569c720e1a43cf87.ctex"
+uid="uid://dnck1njbbu4ge"
+path="res://.godot/imported/mystery_apple_portrait.png-63750672da4569ebc4d2308469a06ead.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://boss_apple_portrait.png"
-dest_files=["res://.godot/imported/boss_apple_portrait.png-0249bda9a4dbc7c7569c720e1a43cf87.ctex"]
+source_file="res://mystery_apple_portrait.png"
+dest_files=["res://.godot/imported/mystery_apple_portrait.png-63750672da4569ebc4d2308469a06ead.ctex"]
 
 [params]
 

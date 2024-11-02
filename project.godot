@@ -29,6 +29,7 @@ directories/dtl_directory={
 [dotnet]
 
 project/assembly_name="New Game Project"
+"<<<<<<<HEAD[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [editor_plugins]
 

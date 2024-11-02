@@ -4,6 +4,20 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+@onready var pivot: Node3D = $Pivot
+
+@export_category("Sensitivity")
+@export var xSens: float = 0.5
+@export var ySens: float = 0.5
+
+
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		rotate_y(deg_to_rad(clamp(-event.relative.x * xSens, -30, 90)))
+		pivot.rotate_x(clamp((deg_to_rad(-event.relative.y * ySens)), -30, 90))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

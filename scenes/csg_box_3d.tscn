@@ -4,3 +4,4 @@
 
 [node name="CSGBox3D" type="CSGBox3D"]
 material_override = ExtResource("1_o2e2t")
+use_collision = true

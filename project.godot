@@ -28,8 +28,8 @@ directories/dtl_directory={
 "talktoNPC": "res://Dialogue trees/talktoNPC.dtl",
 "timelinetest": "res://Dialogue trees/timelinetest.dtl"
 }
-layout/style_list=["res://style.tres"]
-layout/default_style="res://style.tres"
+layout/style_list=[]
+layout/default_style="Default"
 variables={}
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"

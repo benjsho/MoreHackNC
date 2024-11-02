@@ -47,6 +47,9 @@ func _physics_process(delta: float) -> void:
 		animPlayer.play("pickaxeSwing")
 		updateResources();
 
+	if Input.is_action_just_pressed("Interact") and canTalk:
+		Dialogic.start("talktoNPC")
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")

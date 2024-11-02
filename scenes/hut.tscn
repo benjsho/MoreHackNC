@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://df8f7qoibyt8m"]
+
+[ext_resource type="PackedScene" uid="uid://by1wqjl8vw2o4" path="res://models/hut.glb" id="1_c6krb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_siumv"]
+size = Vector3(1, 1.38379, 1)
+
+[node name="hut" instance=ExtResource("1_c6krb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(9.16878, 0, 0, 0, 9.16878, 0, 0, 0, 9.16878, 0, 2.04544, 0)
+shape = SubResource("BoxShape3D_siumv")

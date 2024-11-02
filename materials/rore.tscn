@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cslf6ajopqrwk"]
+
+[ext_resource type="PackedScene" uid="uid://vgcdosf8lfme" path="res://models/rore.glb" id="1_negn6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jkvur"]
+height = 0.900951
+
+[node name="rore" type="Area3D"]
+
+[node name="rore" parent="." instance=ExtResource("1_negn6")]
+transform = Transform3D(0.292897, 0, 0, 0, 0.292897, 0, 0, 0, 0.292897, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.59655, 0, 0, 0, 1.59655, 0, 0, 0, 1.59655, -0.00069046, 0.362893, 0.000273585)
+shape = SubResource("CylinderShape3D_jkvur")

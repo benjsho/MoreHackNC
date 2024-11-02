@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwf0sojhmilsq"]
+[gd_scene load_steps=13 format=3 uid="uid://d0ltesqphdv4n"]
 
-[ext_resource type="Material" path="res://materials/grass.tres" id="1_qxy0m"]
+[ext_resource type="Material" uid="uid://rk76xmrvwd81" path="res://materials/grass.tres" id="1_qxy0m"]
 [ext_resource type="PackedScene" uid="uid://jgutj4csilqx" path="res://scenes/player.tscn" id="2_xtn6o"]
-[ext_resource type="PackedScene" path="res://scenes/rock.tscn" id="4_gh8ls"]
-[ext_resource type="PackedScene" path="res://scenes/hut.tscn" id="5_kqcsi"]
-[ext_resource type="PackedScene" uid="uid://do410cgmgogq2" path="res://scenes/NPC.tscn" id="5_l1535"]
-[ext_resource type="PackedScene" path="res://materials/hut_2.tscn" id="6_bbssv"]
-[ext_resource type="PackedScene" path="res://materials/hut_3.tscn" id="7_lnlf8"]
-[ext_resource type="PackedScene" path="res://materials/hut_4.tscn" id="8_y5d52"]
+[ext_resource type="PackedScene" uid="uid://dbspeowcgnc1x" path="res://scenes/rock.tscn" id="4_gh8ls"]
+[ext_resource type="PackedScene" uid="uid://df8f7qoibyt8m" path="res://scenes/hut.tscn" id="5_kqcsi"]
+[ext_resource type="PackedScene" uid="uid://bnm866ym2yb4r" path="res://scenes/NPC.tscn" id="5_l1535"]
+[ext_resource type="PackedScene" uid="uid://dsmlhm410dsum" path="res://materials/hut_2.tscn" id="6_bbssv"]
+[ext_resource type="PackedScene" uid="uid://bpm3jl0efuge8" path="res://materials/hut_3.tscn" id="7_lnlf8"]
+[ext_resource type="PackedScene" uid="uid://5kp7mkldledk" path="res://materials/hut_4.tscn" id="8_y5d52"]
+[ext_resource type="PackedScene" uid="uid://cslf6ajopqrwk" path="res://materials/rore.tscn" id="9_xr1p1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2f72h"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -74,6 +75,15 @@ transform = Transform3D(-0.463665, 0, -0.455817, 0, 0.650195, 0, 0.455817, 0, -0
 [node name="hut6" parent="." instance=ExtResource("8_y5d52")]
 transform = Transform3D(0.648828, 0, -0.0421398, 0, 0.650195, 0, 0.0421398, 0, 0.648828, 12.5463, 1.99358, -0.671295)
 
+[node name="rore" parent="." instance=ExtResource("9_xr1p1")]
+transform = Transform3D(1.60112, 0, 0, 0, 1.60112, 0, 0, 0, 1.60112, 5.85846, 0.554837, 6.2042)
+
+[node name="rore2" parent="." instance=ExtResource("9_xr1p1")]
+transform = Transform3D(1.01336, 0, -1.23963, 0, 1.60112, 0, 1.23963, 0, 1.01336, -5.14502, 0.554837, -15.008)
+
+[node name="rore3" parent="." instance=ExtResource("9_xr1p1")]
+transform = Transform3D(1.01336, 0, -1.23963, 0, 1.60112, 0, 1.23963, 0, 1.01336, -21.9594, 0.554839, -15.0262)
+
 [connection signal="area_entered" from="Rock" to="Player" method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rock" to="Player" method="_on_rock_area_exited"]
 [connection signal="area_entered" from="Rock2" to="Player" method="_on_rock_area_entered"]
@@ -82,3 +92,9 @@ transform = Transform3D(0.648828, 0, -0.0421398, 0, 0.650195, 0, 0.0421398, 0, 0
 [connection signal="area_exited" from="Rock3" to="Player" method="_on_rock_area_exited"]
 [connection signal="area_entered" from="NPC" to="Player" method="_on_npc_area_entered"]
 [connection signal="area_exited" from="NPC" to="Player" method="_on_npc_area_exited"]
+[connection signal="area_entered" from="rore" to="Player" method="_on_rock_area_entered"]
+[connection signal="area_exited" from="rore" to="Player" method="_on_rock_area_exited"]
+[connection signal="area_entered" from="rore2" to="Player" method="_on_rock_area_entered"]
+[connection signal="area_exited" from="rore2" to="Player" method="_on_rock_area_exited"]
+[connection signal="area_entered" from="rore3" to="Player" method="_on_rock_area_entered"]
+[connection signal="area_exited" from="rore3" to="Player" method="_on_rock_area_exited"]

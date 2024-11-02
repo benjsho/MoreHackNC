@@ -4,6 +4,11 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+var resources = 0;
+@onready var resourceCounter = $UI/ResourceLabel
+
+var canMine: bool = false
+
 @onready var pivot: Node3D = $Pivot
 
 @export_category("Sensitivity")
@@ -35,6 +40,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
+	if Input.is_action_just_pressed("Mine") and canMine:
+		resources = resources + 1;
+		updateResources();
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
@@ -47,3 +56,18 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func _on_rock_area_entered(area:Area3D) -> void:
+	if area.is_in_group("player"):
+		canMine = true;
+		print_debug("Can mine")
+
+
+func _on_rock_area_exited(area:Area3D) -> void:
+	if area.is_in_group("player"):
+		canMine = false;
+		print_debug("Can't mine")
+		
+func updateResources() -> void:
+	resourceCounter.text = "Resources: " + str(resources)
+	

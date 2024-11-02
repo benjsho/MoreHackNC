@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://jgutj4csilqx"]
+[gd_scene load_steps=7 format=3 uid="uid://jgutj4csilqx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7lobt"]
 [ext_resource type="PackedScene" uid="uid://bb2ecrn6ab3e7" path="res://models/pickaxe.glb" id="2_6pxmt"]
@@ -6,6 +6,13 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5tg7b"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_w0k4t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h6sv4"]
+line_spacing = 50.0
+font_size = 30
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pai8x"]
+size = Vector3(1, 1.43738, 1)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_7lobt")
@@ -30,3 +37,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.624012, 0, -0.908134)
 
 [node name="pickaxe" parent="Holder" instance=ExtResource("2_6pxmt")]
 transform = Transform3D(-0.00025594, -0.000567085, 0.183994, 0.000354215, 0.183994, 0.000567577, -0.183995, 0.000355002, -0.000254848, 0, 0, 0)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResourceLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -367.0
+offset_top = 69.0
+offset_right = -186.0
+offset_bottom = 111.0
+grow_horizontal = 0
+text = "Resources: 0"
+label_settings = SubResource("LabelSettings_h6sv4")
+
+[node name="Area3D" type="Area3D" parent="." groups=["player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.30067, 0, 0, 0, 1.30067, 0, 0, 0, 1.30067, 0, 0.163469, 0)
+shape = SubResource("BoxShape3D_pai8x")

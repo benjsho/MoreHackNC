@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0ltesqphdv4n"]
+[gd_scene load_steps=8 format=3 uid="uid://d0ltesqphdv4n"]
 
 [ext_resource type="Material" uid="uid://rk76xmrvwd81" path="res://materials/grass.tres" id="1_qxy0m"]
 [ext_resource type="PackedScene" uid="uid://jgutj4csilqx" path="res://scenes/player.tscn" id="2_xtn6o"]
 [ext_resource type="PackedScene" uid="uid://cln1ruxrb0r05" path="res://scenes/csg_box_3d.tscn" id="3_pflhg"]
+[ext_resource type="PackedScene" uid="uid://dbspeowcgnc1x" path="res://scenes/rock.tscn" id="4_gh8ls"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2f72h"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -33,8 +34,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0499067, 0.928768, 0.144825
 environment = SubResource("Environment_0s4h5")
 
 [node name="CSGBox3D2" parent="." instance=ExtResource("3_pflhg")]
-transform = Transform3D(4.97565, 0, 0, 0, 4.97565, 0, 0, 0, 4.97565, 10.6259, 2.37472, -4.32904)
+transform = Transform3D(4.97565, 0, 0, 0, 4.97565, 0, 0, 0, 4.97565, 10.6223, 2.35266, -4.33063)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.45203, 0.892003, 0, -0.892003, 0.45203, 0, 6.18871, 0)
 light_energy = 4.011
+
+[node name="Rock" parent="." instance=ExtResource("4_gh8ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1116, 0.508883, 3.34892)
+
+[connection signal="area_entered" from="Rock" to="Player" method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rock" to="Player" method="_on_rock_area_exited"]

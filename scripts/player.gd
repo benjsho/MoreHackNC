@@ -26,7 +26,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * xSens))
 		pivot.rotate_x(clamp((deg_to_rad(-event.relative.y * ySens)), -30, 90))
-		pivot.rotation.x = clamp(pivot.rotation.x, -90, 90)
+		print_debug(pivot.rotation.x)
+		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-70), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -44,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("Mine") and canMine:
-		resources += 1;
+		animPlayer.play("pickaxeSwing")
 		updateResources();
 
 	# Get the input direction and handle the movement/deceleration.

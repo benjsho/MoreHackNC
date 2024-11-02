@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_4tjhh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -307.0
 offset_top = -129.0
 offset_right = 624.0
@@ -21,6 +22,7 @@ scale = Vector2(1.94451, 1)
 texture = ExtResource("2_6748u")
 
 [node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
 offset_left = 309.0
 offset_top = 302.0
 offset_right = 776.0

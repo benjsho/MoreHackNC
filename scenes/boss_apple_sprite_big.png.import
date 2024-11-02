@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3tmj73ttgcol"
-path="res://.godot/imported/boss_apple_sprite.png-6ef12cff037ffac5b25c547dd5b09a5a.ctex"
+uid="uid://dqgyeftwcma6l"
+path="res://.godot/imported/boss_apple_sprite_big.png-ff093c7f4335cc54b2a6ed091f471fdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://materials/boss_apple_sprite.png"
-dest_files=["res://.godot/imported/boss_apple_sprite.png-6ef12cff037ffac5b25c547dd5b09a5a.ctex"]
+source_file="res://scenes/boss_apple_sprite_big.png"
+dest_files=["res://.godot/imported/boss_apple_sprite_big.png-ff093c7f4335cc54b2a6ed091f471fdb.ctex"]
 
 [params]
 
@@ -21,11 +21,11 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
+roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnm866ym2yb4r"]
+[gd_scene load_steps=3 format=3 uid="uid://do410cgmgogq2"]
 
-[ext_resource type="Texture2D" uid="uid://bg4bqlevbavl0" path="res://icons/dude.png" id="1_8lta1"]
+[ext_resource type="Texture2D" uid="uid://3tmj73ttgcol" path="res://materials/boss_apple_sprite.png" id="1_ma2pi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lt7il"]
 
 [node name="Area3D" type="Area3D"]
 
 [node name="NPC" type="Sprite3D" parent="."]
+transform = Transform3D(6441.46, 0, 0, 0, 6441.46, 0, 0, 0, 6441.46, 0, 0, 0)
 billboard = 2
-texture = ExtResource("1_8lta1")
+texture_filter = 0
+texture = ExtResource("1_ma2pi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(15.7562, 0, 0, 0, 15.7562, 0, 0, 0, 15.7562, 0, 0, 0)

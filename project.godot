@@ -28,7 +28,7 @@ directories/dtl_directory={
 "Dialogue trees/talktoNPC": "res://Dialogue trees/talktoNPC.dtl",
 "Dialogue trees/timelinetest": "res://Dialogue trees/timelinetest.dtl",
 "introWithJerry": "res://introWithJerry.dtl",
-"jerryDimissal": "res://jerryDimissal.dtl",
+"jerryDismissal": "res://jerryDismissal.dtl",
 "timelinetest": "res://timelinetest.dtl"
 }
 layout/style_list=[]

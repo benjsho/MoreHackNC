@@ -133,7 +133,7 @@ transform = Transform3D(2.21311, 0, 0, 0, 2.21311, 0, 0, 0, 2.21311, 4.98719, 1.
 transform = Transform3D(1.3211, 0, 0, 0, 1.3211, 0, 0, 0, 1.3211, -26.7105, 0.045753, 2.51848)
 
 [node name="Rocket" parent="." instance=ExtResource("12_1up6m")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46.1539, 2.87504, 1.46908)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45.1467, 2.87504, 1.46908)
 
 [connection signal="area_entered" from="Rock" to="Player" method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rock" to="Player" method="_on_rock_area_exited"]

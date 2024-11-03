@@ -4,5 +4,6 @@
 albedo_color = Color(0.635294, 0, 0, 1)
 
 [node name="CSGBox3D" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0418978, 0)
 material_override = SubResource("StandardMaterial3D_8mmc3")
 use_collision = true

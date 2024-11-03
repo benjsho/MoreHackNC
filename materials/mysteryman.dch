@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.184314, 0, 1, 1),
+"color": Color(0.889221, 0.355469, 1, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
@@ -12,7 +12,7 @@
 "description": "",
 "display_name": "Shady Joey",
 "mirror": false,
-"nicknames": ["(hey is so shady...)"],
+"nicknames": ["(he is so shady...)"],
 "offset": Vector2(-150, -50),
 "portraits": {
 "Sprite-0003": {

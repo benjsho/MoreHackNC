@@ -21,6 +21,7 @@ var npcTalk: int = 0;
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer
 @onready var pickaxe = $Holder/pickaxe
 @onready var badPickaxe = $Holder/badpickaxe
+@onready var coffee = $Holder/appleespresso
 @onready var pauseMenu = $UI/Pause
 
 @export_category("Sensitivity")
@@ -163,6 +164,11 @@ func _on_dialogic_signal(argument:String):
 		print_debug("worked???");
 		pickaxeEnabled = true;
 		badPickaxe.visible = true;
+	if argument == "coffeeShot":
+		badPickaxe.visible = false;
+		coffee.visible = true;
+		pickaxeLevel += 1;
+		
 
 
 func _on_resume_button_down() -> void:

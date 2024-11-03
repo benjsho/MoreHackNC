@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://jgutj4csilqx"]
+[gd_scene load_steps=20 format=3 uid="uid://jgutj4csilqx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7lobt"]
 [ext_resource type="PackedScene" uid="uid://bb2ecrn6ab3e7" path="res://models/pickaxe.glb" id="2_6pxmt"]
 [ext_resource type="PackedScene" uid="uid://dqbf6lhobmetx" path="res://models/badpickaxe.glb" id="2_ojdix"]
+[ext_resource type="PackedScene" uid="uid://dl6s1edi1kwr4" path="res://models/appleespresso.glb" id="4_816ju"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5tg7b"]
 
@@ -185,6 +186,8 @@ _data = {
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_7lobt")
+xSens = null
+ySens = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_5tg7b")
@@ -230,6 +233,10 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_yrf58")
 draw_pass_1 = SubResource("SphereMesh_2jqm7")
+
+[node name="appleespresso" parent="Holder" instance=ExtResource("4_816ju")]
+transform = Transform3D(-0.105328, 0, -9.20807e-09, 0, 0.105328, 0, 9.20807e-09, 0, -0.105328, 0, -0.330699, 0)
+visible = false
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

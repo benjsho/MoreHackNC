@@ -1,13 +1,16 @@
 join Jerry (boss_face) center
-Jerry: Hey! You hit your head real hard during the last mining session? You alright?
+Jerry: Hey! You hit your head real hard during the last mining session? You alright? (Use arrow keys to pick an answer, use enter to respond)
 - Yes
 	Jerry: Ok! I will leave you to mine. I expect ONE HUNDRED resources by the end of the day.
 	- Ok boss
 - No
-	Jerry: Dang, you don't even remember? I'm your boss, Jerry. We're on APPLE PLANETt. Remember?
+	Jerry: Dang, you don't even remember? I'm your boss, Jerry. We're on APPLE PLANET. Remember?
 	- Yes
 		Jerry: Ok, nice! I expect ONE HUNDRED resources by the end of the day.
 		- Ok
 	- No
 		Jerry: You're lying. Get on your feet, and get me ONE HUNDRED resources by the end of the day.
 		- Ok
+Jerry: One more thing! You were about to forget your lucky pickaxe! Here you go.
+[signal arg="openPick"]
+What do you mean I broke it? Get a move on, you got work to do.

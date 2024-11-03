@@ -1,16 +1,16 @@
 [gd_scene load_steps=15 format=3 uid="uid://d0ltesqphdv4n"]
 
-[ext_resource type="Material" path="res://materials/grass.tres" id="1_qxy0m"]
+[ext_resource type="Material" uid="uid://rk76xmrvwd81" path="res://materials/grass.tres" id="1_qxy0m"]
 [ext_resource type="PackedScene" uid="uid://jgutj4csilqx" path="res://scenes/player.tscn" id="2_xtn6o"]
-[ext_resource type="PackedScene" path="res://scenes/rock.tscn" id="4_gh8ls"]
-[ext_resource type="PackedScene" path="res://scenes/hut.tscn" id="5_kqcsi"]
+[ext_resource type="PackedScene" uid="uid://dbspeowcgnc1x" path="res://scenes/rock.tscn" id="4_gh8ls"]
+[ext_resource type="PackedScene" uid="uid://df8f7qoibyt8m" path="res://scenes/hut.tscn" id="5_kqcsi"]
 [ext_resource type="PackedScene" uid="uid://do410cgmgogq2" path="res://scenes/NPC.tscn" id="5_l1535"]
-[ext_resource type="PackedScene" path="res://scenes/hut_2.tscn" id="6_bbssv"]
-[ext_resource type="PackedScene" path="res://scenes/hut_3.tscn" id="7_lnlf8"]
-[ext_resource type="PackedScene" path="res://scenes/hut_4.tscn" id="8_y5d52"]
-[ext_resource type="PackedScene" path="res://scenes/rore.tscn" id="9_xr1p1"]
-[ext_resource type="PackedScene" path="res://wall.tscn" id="10_feepy"]
-[ext_resource type="PackedScene" path="res://scenes/NPC2.tscn" id="11_f3gg6"]
+[ext_resource type="PackedScene" uid="uid://dsmlhm410dsum" path="res://scenes/hut_2.tscn" id="6_bbssv"]
+[ext_resource type="PackedScene" uid="uid://bpm3jl0efuge8" path="res://scenes/hut_3.tscn" id="7_lnlf8"]
+[ext_resource type="PackedScene" uid="uid://5kp7mkldledk" path="res://scenes/hut_4.tscn" id="8_y5d52"]
+[ext_resource type="PackedScene" uid="uid://dulb1myyv4gdf" path="res://wall.tscn" id="10_feepy"]
+[ext_resource type="PackedScene" uid="uid://dks6jnj3sfshy" path="res://door.tscn" id="11_ernva"]
+[ext_resource type="PackedScene" uid="uid://dmacef2euyjtn" path="res://scenes/NPC2.tscn" id="11_f3gg6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2f72h"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -72,19 +72,10 @@ transform = Transform3D(0.604023, 0, 0.42932, 0, 0.741053, 0, -0.42932, 0, 0.604
 transform = Transform3D(-0.0842237, 0, 0.736252, 0, 0.741053, 0, -0.736252, 0, -0.0842237, 4.34218, 2.78473, -21.0692)
 
 [node name="hut5" parent="." instance=ExtResource("8_y5d52")]
-transform = Transform3D(-0.463665, 0, -0.455817, 0, 0.650195, 0, 0.455817, 0, -0.463665, -22.5168, 1.99358, 16.5318)
+transform = Transform3D(-0.463665, 0, -0.455817, 0, 0.650195, 0, 0.455817, 0, -0.463665, -20.3148, 2.60145, 19.0202)
 
 [node name="hut6" parent="." instance=ExtResource("8_y5d52")]
 transform = Transform3D(0.648828, 0, -0.0421398, 0, 0.650195, 0, 0.0421398, 0, 0.648828, 12.5463, 1.99358, -0.671295)
-
-[node name="rore" parent="." instance=ExtResource("9_xr1p1")]
-transform = Transform3D(1.60112, 0, 0, 0, 1.60112, 0, 0, 0, 1.60112, 5.85846, 0.554837, 6.2042)
-
-[node name="rore2" parent="." instance=ExtResource("9_xr1p1")]
-transform = Transform3D(1.01336, 0, -1.23963, 0, 1.60112, 0, 1.23963, 0, 1.01336, -5.14502, 0.554837, -15.008)
-
-[node name="rore3" parent="." instance=ExtResource("9_xr1p1")]
-transform = Transform3D(1.01336, 0, -1.23963, 0, 1.60112, 0, 1.23963, 0, 1.01336, -21.9594, 0.554839, -15.0262)
 
 [node name="Wall" parent="." instance=ExtResource("10_feepy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0943, 1.21624, 18.2668)
@@ -96,10 +87,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.05822, 27.0943, 1.21624, -1.54
 transform = Transform3D(1, -2.91038e-11, -1.45519e-11, 2.91038e-11, 1, -5.39444e-11, 2.91038e-11, 4.30731e-11, 0.85844, 27.0943, 1.21624, -19.5658)
 
 [node name="Wall5" parent="." instance=ExtResource("10_feepy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5046, 1.21624, 18.2668)
+transform = Transform3D(0.998942, 0, 0, 0, 0.998942, 0, 0, 0, 1.13512, -26.5046, 1.21624, 17.1654)
 
 [node name="Wall6" parent="." instance=ExtResource("10_feepy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.07877, -26.5046, 1.21624, -1.54231)
+transform = Transform3D(0.998565, 0, 0, 0, 0.998565, 0, 0, 0, 0.53992, -26.5241, 1.18888, -6.16347)
 
 [node name="Wall7" parent="." instance=ExtResource("10_feepy")]
 transform = Transform3D(1, -2.91038e-11, -1.45519e-11, 2.91038e-11, 1, -5.39444e-11, 2.91038e-11, 4.30731e-11, 0.85844, -26.5046, 1.21624, -19.5658)
@@ -131,6 +122,9 @@ size = Vector3(1, 1, 1.84595)
 [node name="NPC2" parent="." instance=ExtResource("11_f3gg6")]
 transform = Transform3D(2.21311, 0, 0, 0, 2.21311, 0, 0, 0, 2.21311, 4.98719, 1.32013, -43.1742)
 
+[node name="Door" parent="." instance=ExtResource("11_ernva")]
+transform = Transform3D(1.3211, 0, 0, 0, 1.3211, 0, 0, 0, 1.3211, -26.7105, 0.045753, 2.51848)
+
 [connection signal="area_entered" from="Rock" to="Player" method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rock" to="Player" method="_on_rock_area_exited"]
 [connection signal="area_entered" from="Rock2" to="Player" method="_on_rock_area_entered"]
@@ -139,11 +133,5 @@ transform = Transform3D(2.21311, 0, 0, 0, 2.21311, 0, 0, 0, 2.21311, 4.98719, 1.
 [connection signal="area_exited" from="Rock3" to="Player" method="_on_rock_area_exited"]
 [connection signal="area_entered" from="NPC" to="Player" method="_on_npc_area_entered"]
 [connection signal="area_exited" from="NPC" to="Player" method="_on_npc_area_exited"]
-[connection signal="area_entered" from="rore" to="Player" method="_on_rock_area_entered"]
-[connection signal="area_exited" from="rore" to="Player" method="_on_rock_area_exited"]
-[connection signal="area_entered" from="rore2" to="Player" method="_on_rock_area_entered"]
-[connection signal="area_exited" from="rore2" to="Player" method="_on_rock_area_exited"]
-[connection signal="area_entered" from="rore3" to="Player" method="_on_rock_area_entered"]
-[connection signal="area_exited" from="rore3" to="Player" method="_on_rock_area_exited"]
 [connection signal="area_entered" from="NPC2" to="Player" method="_on_npc_2_area_entered"]
 [connection signal="area_exited" from="NPC2" to="Player" method="_on_npc_2_area_exited"]

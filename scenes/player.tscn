@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://jgutj4csilqx"]
+[gd_scene load_steps=16 format=3 uid="uid://jgutj4csilqx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7lobt"]
 [ext_resource type="PackedScene" uid="uid://bb2ecrn6ab3e7" path="res://models/pickaxe.glb" id="2_6pxmt"]
+[ext_resource type="PackedScene" uid="uid://dqbf6lhobmetx" path="res://models/badpickaxe.glb" id="2_ojdix"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5tg7b"]
 
@@ -121,6 +122,20 @@ tracks/3/keys = {
 "method": &"restart"
 }]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Holder/badpickaxe/GPUParticles3D2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.466667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_idkve"]
 _data = {
@@ -150,8 +165,22 @@ near = 0.1
 [node name="Holder" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.624012, 0, -0.908134)
 
+[node name="badpickaxe" parent="Holder" instance=ExtResource("2_ojdix")]
+transform = Transform3D(-8.06712e-09, 0, -0.184554, 0, 0.184554, 0, 0.184554, 0, -8.06712e-09, 0, 0, 0)
+visible = false
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Holder/badpickaxe"]
+transform = Transform3D(-2.43787e-07, 1.61591e-08, 5.41846, 0, 5.41847, 1.24803e-08, -5.41847, 4.16323e-08, -2.30541e-07, -2.14894, 2.12238, 0.0222185)
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_yrf58")
+draw_pass_1 = SubResource("SphereMesh_2jqm7")
+
 [node name="pickaxe" parent="Holder" instance=ExtResource("2_6pxmt")]
 transform = Transform3D(-0.00025594, -0.000567085, 0.183994, 0.000354215, 0.183994, 0.000567577, -0.183995, 0.000355002, -0.000254848, 0, 0, 0)
+visible = false
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Holder/pickaxe"]
 transform = Transform3D(-0.00756009, 0.0104629, -5.4349, -0.0167508, 5.43489, 0.0104862, 5.4349, 0.0167653, -0.00752776, 2.15959, 2.12472, -0.0127335)

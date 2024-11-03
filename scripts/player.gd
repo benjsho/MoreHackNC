@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 6.5
 const JUMP_VELOCITY = 4.5
 
 var resources = 0;
@@ -9,6 +9,7 @@ var pickaxeLevel = 1;
 @onready var resourceCounter = $UI/ResourceLabel
 
 var canMine: bool = false
+var pickaxeEnabled: bool = false;
 var canTalk: bool = false
 
 var jerryLevel = 0;
@@ -17,6 +18,8 @@ var npcTalk: int = 0;
 
 @onready var pivot: Node3D = $Pivot
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer
+@onready var pickaxe = $Holder/pickaxe
+@onready var badPickaxe = $Holder/badpickaxe
 
 @export_category("Sensitivity")
 @export var xSens: float = 0.5
@@ -25,6 +28,9 @@ var npcTalk: int = 0;
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	pickaxe.visible = false;
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+	
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -47,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	if Input.is_action_just_pressed("Mine") and canMine:
+	if Input.is_action_just_pressed("Mine") and canMine and pickaxeEnabled:
 		animPlayer.play("pickaxeSwing")
 		updateResources();
 
@@ -75,7 +81,8 @@ func _physics_process(delta: float) -> void:
 						Dialogic.start("mysteryreturn")
 					_:
 						print_debug("Error" + str(dealLevel))
-
+	else:
+		print_debug("error")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -136,3 +143,12 @@ func _on_npc_2_area_entered(area:Area3D) -> void:
 	if (area.is_in_group("player")):
 		canTalk = true;
 		npcTalk = 2
+
+func _on_dialogic_signal(argument:String):
+	if argument == "openPick":
+		print_debug("worked???")
+		pickaxeEnabled = true;
+		badPickaxe.visible = true;
+	else:
+		print_debug("error")
+

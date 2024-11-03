@@ -20,6 +20,8 @@ size = Vector3(1, 0.0814209, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_wojd5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0499067, 0.928768, 0.144825)
+xSens = 0.5
+ySens = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 _import_path = NodePath("")

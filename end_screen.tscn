@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cro0a325qc4qt"]
+
+[ext_resource type="Texture2D" uid="uid://hlkl3khwj1jk" path="res://materials/apple_win.png" id="1_wsqel"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -625.0
+offset_top = -343.0
+offset_right = 581.0
+offset_bottom = 216.0
+texture = ExtResource("1_wsqel")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+offset_left = -177.0
+offset_top = 544.0
+offset_right = 1317.0
+offset_bottom = 2115.0
+texture = ExtResource("1_wsqel")

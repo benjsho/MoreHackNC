@@ -69,8 +69,10 @@ func _physics_process(delta: float) -> void:
 				match dealLevel:
 					0:
 						print_debug("Talking with the guy")
+						Dialogic.start("mysterydialogue")
+						#dealLevel += 1; 
 					1: 
-						pass
+						Dialogic.start("mysteryreturn")
 					_:
 						print_debug("Error" + str(dealLevel))
 

@@ -2,41 +2,19 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(1, 0.226563, 0.226563, 1),
+"color": Color(0.184314, 0, 1, 1),
 "custom_info": {
 "sound_mood_default": "",
-"sound_moods": {
-"Mood 1": {
-"mode": 0,
-"name": "Mood 1",
-"pitch_base": 1.0,
-"pitch_variance": 0.0,
-"skip_characters": 1.0,
-"sound_path": "res://boss_sound.mp3",
-"volume_base": 0.0,
-"volume_variance": 0.0
-}
+"sound_moods": {},
+"style": ""
 },
-"style": "style"
-},
-"default_portrait": "boss_apple_portrait",
-"description": "he is so bossy!",
-"display_name": "Boss Jerry",
+"default_portrait": "mystery_apple_portrait",
+"description": "",
+"display_name": "Shady Joey",
 "mirror": false,
-"nicknames": ["(he is so bossy!)"],
-"offset": Vector2(-200, 0),
+"nicknames": ["(hey is so shady...)"],
+"offset": Vector2(-150, -50),
 "portraits": {
-"": {
-"export_overrides": {
-"image": "\"res://boss_apple_portrait.png\""
-},
-"ignore_char_scale": false,
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": "",
-"sound_mood": "Mood 1"
-},
 "Sprite-0003": {
 "export_overrides": {
 "image": "\"res://materials/Sprite-0003.png\""
@@ -51,7 +29,7 @@
 "image": "\"res://materials/boss_apple_portrait.png\""
 },
 "mirror": false,
-"offset": Vector2(-200, 0),
+"offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
@@ -64,15 +42,14 @@
 "scale": 1,
 "scene": ""
 },
-"boss_face": {
+"mystery_apple_portrait": {
 "export_overrides": {
-"image": "\"res://boss_apple_portrait.png\""
+"image": "\"res://materials/mystery_apple_portrait.png\""
 },
 "mirror": false,
-"offset": Vector2(-200, 0),
-"scale": 1,
-"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn",
-"sound_mood": "Mood 1"
+"offset": Vector2(-150, 200),
+"scale": 0.9,
+"scene": ""
 },
 "mystery_apple_sprite": {
 "export_overrides": {
@@ -84,5 +61,5 @@
 "scene": ""
 }
 },
-"scale": 0.5
+"scale": 1.0
 }

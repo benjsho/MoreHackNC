@@ -22,18 +22,23 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Jerry": "res://Jerry.dch"
+"Jerry": "res://Jerry.dch",
+"mysteryman": "res://materials/mysteryman.dch"
 }
 directories/dtl_directory={
 "Dialogue trees/talktoNPC": "res://Dialogue trees/talktoNPC.dtl",
 "Dialogue trees/timelinetest": "res://Dialogue trees/timelinetest.dtl",
 "introWithJerry": "res://introWithJerry.dtl",
 "jerryDismissal": "res://jerryDismissal.dtl",
+"mysterydialogue": "res://materials/mysterydialogue.dtl",
+"mysteryreturn": "res://materials/mysteryreturn.dtl",
 "timelinetest": "res://timelinetest.dtl"
 }
 layout/style_list=[]
 layout/default_style="Default"
-variables={}
+variables={
+"MysteryInteracted": 0
+}
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

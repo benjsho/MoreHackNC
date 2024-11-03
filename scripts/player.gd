@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 6.5;
-const JUMP_VELOCITY = 15;
+const JUMP_VELOCITY = 3;
 
 var resources = 0;
 var pickaxeLevel = 1;
@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 
 				
 		# Handle jump.
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor() and canJump and Dialogic.current_timeline == null:
+		if Input.is_action_just_pressed("ui_accept") and is_on_floor() and canJump:
 			velocity.y = JUMP_VELOCITY
 
 		if Input.is_action_just_pressed("Mine") and canMine and pickaxeEnabled:

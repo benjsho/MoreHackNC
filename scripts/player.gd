@@ -55,7 +55,12 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("Mine") and canMine and pickaxeEnabled:
 		animPlayer.play("pickaxeSwing")
+		print_debug("swing")
 		updateResources();
+	elif Input.is_action_just_pressed("Mine") and pickaxeEnabled:
+		animPlayer.play("pickaxeWhiff")
+		print_debug("pickWhiff")
+	
 
 	if Input.is_action_just_pressed("Interact") and canTalk:
 		match npcTalk:
@@ -75,14 +80,11 @@ func _physics_process(delta: float) -> void:
 				match dealLevel:
 					0:
 						print_debug("Talking with the guy")
-						Dialogic.start("mysterydialogue")
-						#dealLevel += 1; 
 					1: 
-						Dialogic.start("mysteryreturn")
+						pass
 					_:
 						print_debug("Error" + str(dealLevel))
-	else:
-		print_debug("error")
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

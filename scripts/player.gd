@@ -26,6 +26,7 @@ var npcTalk: int = 0;
 @onready var pauseMenu = $UI/Pause
 @onready var music = $AudioStreamPlayer3D
 
+# this is for sensitivity
 @export_category("Sensitivity")
 @export var xSens: float = 0.5;
 @export var ySens: float = 0.5;
@@ -66,7 +67,6 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 
 		if Input.is_action_just_pressed("Mine") and canMine and pickaxeEnabled:
-			print_debug("swing")
 			animPlayer.play("pickaxeSwing");
 			updateResources();
 		elif Input.is_action_just_pressed("Mine") and pickaxeEnabled:
@@ -122,13 +122,13 @@ func _physics_process(delta: float) -> void:
 func _on_rock_area_entered(area:Area3D) -> void:
 	if (area.is_in_group("player")):
 		canMine = true;
-		print_debug("Can mine")
+
 
 
 func _on_rock_area_exited(area:Area3D) -> void:
 	if (area.is_in_group("player")):
 		canMine = false;
-		print_debug("Can't mine")
+
 		
 func updateResources() -> void:
 	resourceCounter.text = "Resources: " + str(resources)

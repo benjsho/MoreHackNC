@@ -78,12 +78,12 @@ func _physics_process(delta: float) -> void:
 			match npcTalk:
 				1:
 					if (resources >= 100):
-						jerryLevel += 1;
+						jerryLevel = 2;
 					match jerryLevel:
 						0:
 							if Dialogic.current_timeline == null:
 								Dialogic.start("introWithJerry")
-								jerryLevel += 1;
+								jerryLevel = 1;
 								dealLevel = 1; 
 						1:
 							if Dialogic.current_timeline == null:

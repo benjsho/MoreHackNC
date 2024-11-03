@@ -41,7 +41,19 @@ xSens = 0.5
 ySens = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 environment = SubResource("Environment_0s4h5")
+camera_attributes = null
+compositor = null
+script = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.45203, 0.892003, 0, -0.892003, 0.45203, 0, 6.18871, 0)

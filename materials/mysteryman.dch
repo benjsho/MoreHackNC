@@ -30,7 +30,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 1.0,
 "scene": ""
 },
 "boss_apple_sprite": {
@@ -47,8 +47,8 @@
 "image": "\"res://materials/mystery_apple_portrait.png\""
 },
 "mirror": false,
-"offset": Vector2(-150, 200),
-"scale": 0.9,
+"offset": Vector2(-200, 200),
+"scale": 0.7,
 "scene": ""
 },
 "mystery_apple_sprite": {

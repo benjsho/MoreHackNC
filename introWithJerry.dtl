@@ -1,16 +1,17 @@
 join Jerry (boss_face) center
-Jerry: Hey! You hit your head real hard during the last mining session? You alright? (Use arrow keys to pick an answer, use enter to respond)
+Jerry (boss_apple_portrait): hey bucko. you ate too many APPLES and passed out last night. you alright? \
+(arrow keys to select; space/enter to choose)
 - Yes
-	Jerry: Ok! I will leave you to mine. I expect ONE HUNDRED resources by the end of the day.
-	- Ok boss
+	Jerry (boss_apple_portrait): great! i will leave you to mine. i expect ONE HUNDRED resources by the end of the day.
+	- Ok boss! :)
 - No
-	Jerry: Dang, you don't even remember? I'm your boss, Jerry. We're on APPLE PLANET. Remember?
+	Jerry (boss_apple_portrait): dang, you don't even remember? i'm your boss, Jerry. We're on APPLE PLANET. remember, bucko?
 	- Yes
-		Jerry: Ok, nice! I expect ONE HUNDRED resources by the end of the day.
+		Jerry (boss_apple_portrait): ok, nice! i expect ONE HUNDRED resources by the end of the day.
 		- Ok
 	- No
-		Jerry: You're lying. Get on your feet, and get me ONE HUNDRED resources by the end of the day.
-		- Ok
-Jerry: One more thing! You were about to forget your lucky pickaxe! Here you go.
+		Jerry (boss_apple_portrait): you're lying. get on your feet, and get me ONE HUNDRED resources by the end of the day.
+		- man...
+Jerry (boss_apple_portrait): one more thing. you forgot to take your lucky pickaxe. here you go, bucko! 
 [signal arg="openPick"]
-What do you mean I broke it? Get a move on, you got work to do.
+[end_timeline]

@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 
-const SPEED = 6.5
-const JUMP_VELOCITY = 4.5
+const SPEED = 6.5;
+const JUMP_VELOCITY = 3;
 
 var resources = 0;
 var pickaxeLevel = 1;
@@ -12,6 +12,7 @@ var canMine: bool = false;
 var pickaxeEnabled: bool = false;
 var canTalk: bool = false;
 var gamePaused: bool = false;
+var canJump;
 
 var jerryLevel = 0;
 var dealLevel = 0;
@@ -23,6 +24,7 @@ var npcTalk: int = 0;
 @onready var badPickaxe = $Holder/badpickaxe
 @onready var coffee = $Holder/appleespresso
 @onready var pauseMenu = $UI/Pause
+@onready var music = $AudioStreamPlayer3D
 
 @export_category("Sensitivity")
 @export var xSens: float = 0.5;
@@ -35,6 +37,8 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal);
 	pauseMenu.visible = false;
 	gamePaused = false;
+	music.play();
+	canJump = false;
 	
 
 func _input(event: InputEvent) -> void:
@@ -58,8 +62,8 @@ func _physics_process(delta: float) -> void:
 
 				
 		# Handle jump.
-	#	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	#		velocity.y = JUMP_VELOCITY
+		if Input.is_action_just_pressed("ui_accept") and is_on_floor() and canJump:
+			velocity.y = JUMP_VELOCITY
 
 		if Input.is_action_just_pressed("Mine") and canMine and pickaxeEnabled:
 			print_debug("swing")
@@ -74,18 +78,21 @@ func _physics_process(delta: float) -> void:
 			match npcTalk:
 				1:
 					if (resources >= 100):
-						jerryLevel += 1;
+						jerryLevel = 2;
 					match jerryLevel:
 						0:
 							if Dialogic.current_timeline == null:
 								Dialogic.start("introWithJerry")
-								jerryLevel += 1;
+								jerryLevel = 1;
 								dealLevel = 1; 
 						1:
 							if Dialogic.current_timeline == null:
 								Dialogic.start("jerryDismissal")
+						2:
+							if Dialogic.current_timeline == null:
+								Dialogic.start("jerryEnd")
 						_:
-							print_debug("Error" + str(jerryLevel))
+							print_debug("error" + str(jerryLevel));
 
 				2:
 					match dealLevel:
@@ -168,6 +175,8 @@ func _on_dialogic_signal(argument:String):
 		badPickaxe.visible = false;
 		coffee.visible = true;
 		pickaxeLevel += 1;
+	if argument == "enableJump":
+		canJump = true;
 		
 
 

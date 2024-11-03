@@ -30,6 +30,7 @@ directories/dtl_directory={
 "Dialogue trees/timelinetest": "res://Dialogue trees/timelinetest.dtl",
 "introWithJerry": "res://introWithJerry.dtl",
 "jerryDismissal": "res://jerryDismissal.dtl",
+"jerryEnd": "res://jerryEnd.dtl",
 "mysterydialogue": "res://materials/mysterydialogue.dtl",
 "mysteryreturn": "res://materials/mysteryreturn.dtl",
 "timelinetest": "res://timelinetest.dtl"

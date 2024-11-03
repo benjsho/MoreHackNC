@@ -57,36 +57,42 @@ func _physics_process(delta: float) -> void:
 
 				
 		# Handle jump.
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
+	#	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	#		velocity.y = JUMP_VELOCITY
 
 		if Input.is_action_just_pressed("Mine") and canMine and pickaxeEnabled:
 			print_debug("swing")
+			animPlayer.play("pickaxeSwing");
 			updateResources();
 		elif Input.is_action_just_pressed("Mine") and pickaxeEnabled:
 			animPlayer.play("pickaxeWhiff")
 
 		
 
-		if Input.is_action_just_pressed("Interact") and canTalk:
+		if Input.is_action_just_pressed("ui_accept") and canTalk:
 			match npcTalk:
 				1:
 					if (resources >= 100):
 						jerryLevel += 1;
 					match jerryLevel:
 						0:
-							Dialogic.start("introWithJerry")
-							jerryLevel += 1;
+							if Dialogic.current_timeline == null:
+								Dialogic.start("introWithJerry")
+								jerryLevel += 1;
+								dealLevel = 1; 
 						1:
-							Dialogic.start("jerryDismissal")
+							if Dialogic.current_timeline == null:
+								Dialogic.start("jerryDismissal")
 						_:
 							print_debug("Error" + str(jerryLevel))
 
 				2:
 					match dealLevel:
-						0:
-							print_debug("Talking with the guy")
-						1: 
+						1:
+							if Dialogic.current_timeline == null: 
+								print_debug("Talking with the guy")
+								Dialogic.start("mysterydialogue")
+						2: 
 							pass
 						_:
 							print_debug("Error" + str(dealLevel))

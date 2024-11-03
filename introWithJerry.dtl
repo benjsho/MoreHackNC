@@ -1,17 +1,17 @@
-join Jerry (boss_face) center
-Jerry (boss_apple_portrait): hey bucko. you ate too many APPLES and passed out last night. you alright? \
+join Jerry (boss_apple_portrait) center
+Jerry (boss_apple_portrait): hey bucko.  you ate too many APPLES and passed out last night. you alright?\
 (arrow keys to select; space/enter to choose)
 - Yes
 	Jerry (boss_apple_portrait): great! i will leave you to mine. i expect ONE HUNDRED resources by the end of the day.
 	- Ok boss! :)
 - No
-	Jerry (boss_apple_portrait): dang, you don't even remember? i'm your boss, Jerry. We're on APPLE PLANET. remember, bucko?
+	Jerry (boss_apple_portrait): dang, you don't even remember? i'm your boss, Jerry. we're on APPLE PLANET. remember, bucko?
 	- Yes
 		Jerry (boss_apple_portrait): ok, nice! i expect ONE HUNDRED resources by the end of the day.
 		- Ok
 	- No
 		Jerry (boss_apple_portrait): you're lying. get on your feet, and get me ONE HUNDRED resources by the end of the day.
-		- man...
-Jerry (boss_apple_portrait): one more thing. you forgot to take your lucky pickaxe. here you go, bucko! 
+		- Shucks!
+Jerry (boss_apple_portrait): one more thing! you were about to forget your lucky pickaxe! here you go.
 [signal arg="openPick"]
 [end_timeline]

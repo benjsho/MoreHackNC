@@ -1,16 +1,16 @@
 [gd_scene load_steps=15 format=3 uid="uid://d0ltesqphdv4n"]
 
-[ext_resource type="Material" path="res://materials/grass.tres" id="1_qxy0m"]
+[ext_resource type="Material" uid="uid://rk76xmrvwd81" path="res://materials/grass.tres" id="1_qxy0m"]
 [ext_resource type="PackedScene" uid="uid://jgutj4csilqx" path="res://scenes/player.tscn" id="2_xtn6o"]
-[ext_resource type="PackedScene" path="res://scenes/rock.tscn" id="4_gh8ls"]
-[ext_resource type="PackedScene" path="res://scenes/hut.tscn" id="5_kqcsi"]
+[ext_resource type="PackedScene" uid="uid://dbspeowcgnc1x" path="res://scenes/rock.tscn" id="4_gh8ls"]
+[ext_resource type="PackedScene" uid="uid://df8f7qoibyt8m" path="res://scenes/hut.tscn" id="5_kqcsi"]
 [ext_resource type="PackedScene" uid="uid://do410cgmgogq2" path="res://scenes/NPC.tscn" id="5_l1535"]
-[ext_resource type="PackedScene" path="res://scenes/hut_2.tscn" id="6_bbssv"]
-[ext_resource type="PackedScene" path="res://scenes/hut_3.tscn" id="7_lnlf8"]
-[ext_resource type="PackedScene" path="res://scenes/hut_4.tscn" id="8_y5d52"]
-[ext_resource type="PackedScene" path="res://wall.tscn" id="10_feepy"]
-[ext_resource type="PackedScene" path="res://door.tscn" id="11_ernva"]
-[ext_resource type="PackedScene" path="res://scenes/NPC2.tscn" id="11_f3gg6"]
+[ext_resource type="PackedScene" uid="uid://dsmlhm410dsum" path="res://scenes/hut_2.tscn" id="6_bbssv"]
+[ext_resource type="PackedScene" uid="uid://bpm3jl0efuge8" path="res://scenes/hut_3.tscn" id="7_lnlf8"]
+[ext_resource type="PackedScene" uid="uid://5kp7mkldledk" path="res://scenes/hut_4.tscn" id="8_y5d52"]
+[ext_resource type="PackedScene" uid="uid://dulb1myyv4gdf" path="res://wall.tscn" id="10_feepy"]
+[ext_resource type="PackedScene" uid="uid://dks6jnj3sfshy" path="res://door.tscn" id="11_ernva"]
+[ext_resource type="PackedScene" uid="uid://dmacef2euyjtn" path="res://scenes/NPC2.tscn" id="11_f3gg6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2f72h"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -69,7 +69,7 @@ transform = Transform3D(0.0724939, 0, -1.17118, 0, 1.17342, 0, 1.17118, 0, 0.072
 transform = Transform3D(0.604023, 0, 0.42932, 0, 0.741053, 0, -0.42932, 0, 0.604023, 16.0664, 2.78473, -13.4459)
 
 [node name="hut7" parent="." instance=ExtResource("7_lnlf8")]
-transform = Transform3D(-0.0842237, 0, 0.736252, 0, 0.741053, 0, -0.736252, 0, -0.0842237, 4.34218, 2.78473, -21.0692)
+transform = Transform3D(-0.0842237, 0, 0.736252, 0, 0.741053, 0, -0.736252, 0, -0.0842237, 4.34218, 2.78473, -20.092)
 
 [node name="hut5" parent="." instance=ExtResource("8_y5d52")]
 transform = Transform3D(-0.463665, 0, -0.455817, 0, 0.650195, 0, 0.455817, 0, -0.463665, -20.3148, 2.60145, 19.0202)

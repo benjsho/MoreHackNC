@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://jgutj4csilqx"]
+[gd_scene load_steps=17 format=3 uid="uid://jgutj4csilqx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7lobt"]
 [ext_resource type="PackedScene" uid="uid://bb2ecrn6ab3e7" path="res://models/pickaxe.glb" id="2_6pxmt"]
@@ -137,10 +137,39 @@ tracks/4/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_rkdoi"]
+resource_name = "pickaxeWhiff"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Holder:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.638372, 0, 0), Vector3(-1.42056, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Holder:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.624012, 0, -0.908134), Vector3(0.624012, 0.805759, 0.246331), Vector3(0.624012, 0.0539406, -1.01859), Vector3(0.624012, 0, -0.908134)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_idkve"]
 _data = {
 "RESET": SubResource("Animation_3mfjp"),
-"pickaxeSwing": SubResource("Animation_635om")
+"pickaxeSwing": SubResource("Animation_635om"),
+"pickaxeWhiff": SubResource("Animation_rkdoi")
 }
 
 [node name="Player" type="CharacterBody3D"]
@@ -226,6 +255,16 @@ offset_bottom = 111.0
 grow_horizontal = 0
 text = "Resources: 0"
 label_settings = SubResource("LabelSettings_h6sv4")
+
+[node name="Control" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Area3D" type="Area3D" parent="." groups=["player"]]
 

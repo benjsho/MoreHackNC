@@ -50,43 +50,41 @@ func _physics_process(delta: float) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			
 	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	#	velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("Mine") and canMine and pickaxeEnabled:
 		animPlayer.play("pickaxeSwing")
+		print_debug("swing")
 		updateResources();
+	elif Input.is_action_just_pressed("Mine") and pickaxeEnabled:
+		animPlayer.play("pickaxeWhiff")
+		print_debug("pickWhiff")
+	
 
-	if Input.is_action_just_pressed("ui_accept") and canTalk:
+	if Input.is_action_just_pressed("Interact") and canTalk:
 		match npcTalk:
 			1:
 				if (resources >= 100):
 					jerryLevel += 1;
 				match jerryLevel:
 					0:
-						if Dialogic.current_timeline == null:
-							Dialogic.start("introWithJerry")
-							jerryLevel += 1;
-							dealLevel = 1; 
+						Dialogic.start("introWithJerry")
+						jerryLevel += 1;
 					1:
-						if Dialogic.current_timeline == null:
-							Dialogic.start("jerryDismissal")
+						Dialogic.start("jerryDismissal")
 					_:
 						print_debug("Error" + str(jerryLevel))
 
 			2:
 				match dealLevel:
-					1:
+					0:
 						print_debug("Talking with the guy")
-						if Dialogic.current_timeline == null:
-							Dialogic.start("mysterydialogue")
-						#dealLevel += 1; 
-					5: 
-						Dialogic.start("mysteryreturn")
+					1: 
+						pass
 					_:
 						print_debug("Error" + str(dealLevel))
-	else:
-		print_debug("error")
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -155,3 +153,4 @@ func _on_dialogic_signal(argument:String):
 		badPickaxe.visible = true;
 	else:
 		print_debug("error")
+

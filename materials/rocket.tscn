@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckaeg36fq4nx0"]
+
+[ext_resource type="PackedScene" uid="uid://5w6iviwofduk" path="res://materials/rocket.glb" id="1_1aipv"]
+[ext_resource type="Material" uid="uid://cjdj2y046g1hi" path="res://materials/grey.tres" id="2_y7tkf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_njrrg"]
+size = Vector3(1, 0.392578, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3rb60"]
+size = Vector3(2.67344, 0.307129, 1.39307)
+
+[sub_resource type="PrismMesh" id="PrismMesh_qli7r"]
+left_to_right = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_abvvb"]
+
+[node name="Rocket" type="Node3D"]
+
+[node name="rocket" parent="." instance=ExtResource("1_1aipv")]
+transform = Transform3D(0.706234, 0, 0.706234, 0, 0.998766, 0, -0.706234, 0, 0.706234, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.41817, 0, 0, 0, 1.41817, 0, 0, 0, 1.41817, 0, -0.53278, 0)
+shape = SubResource("BoxShape3D_njrrg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -1.55057, -1.40242, 0)
+shape = SubResource("BoxShape3D_3rb60")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.707107, 0.707107, -8.74228e-08, 0.707107, 0.707107, 0, 6.18172e-08, -6.18172e-08, -1, 1.8495, -1.75646, -0.0605669)
+shape = SubResource("BoxShape3D_3rb60")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-3.09086e-08, 3.09086e-08, -1, 0.707107, 0.707107, 0, 0.707107, -0.707107, -4.37114e-08, 0.0289702, -1.43188, -1.67289)
+shape = SubResource("BoxShape3D_3rb60")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(-1.32197e-07, 0, -1.10336, 0, 2.39387, 0, 3.0243, 0, -4.82296e-08, 0.0678618, -1.32667, 2.38101)
+material_override = ExtResource("2_y7tkf")
+mesh = SubResource("PrismMesh_qli7r")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731845, 0)
+shape = SubResource("SphereShape3D_abvvb")

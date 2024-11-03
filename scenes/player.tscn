@@ -1,11 +1,189 @@
-[gd_scene load_steps=5 format=3 uid="uid://jgutj4csilqx"]
+[gd_scene load_steps=21 format=3 uid="uid://jgutj4csilqx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7lobt"]
 [ext_resource type="PackedScene" uid="uid://bb2ecrn6ab3e7" path="res://models/pickaxe.glb" id="2_6pxmt"]
+[ext_resource type="PackedScene" path="res://models/badpickaxe.glb" id="2_ojdix"]
+[ext_resource type="PackedScene" path="res://models/appleespresso.glb" id="4_816ju"]
+[ext_resource type="AudioStream" path="res://Music/Depths of Apple Planet.mp3" id="5_ladll"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5tg7b"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_w0k4t"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yrf58"]
+angle_min = -720.0
+angle_max = -26.7
+direction = Vector3(0, 0, 0)
+initial_velocity_min = 3.5
+initial_velocity_max = 3.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2goye"]
+albedo_color = Color(0.250213, 0.250213, 0.250213, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_2jqm7"]
+material = SubResource("StandardMaterial3D_2goye")
+radius = 0.05
+height = 0.05
+
+[sub_resource type="Theme" id="Theme_cqxmw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2ys6"]
+bg_color = Color(0.272356, 0.604146, 1, 1)
+border_color = Color(0.240775, 2.42579e-05, 0.937546, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_h6sv4"]
+line_spacing = 50.0
+font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjylf"]
+bg_color = Color(0.270588, 0.603922, 1, 1)
+border_color = Color(0.270588, 0.603922, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_pejck"]
+font_size = 30
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pai8x"]
+size = Vector3(1, 1.43738, 1)
+
+[sub_resource type="Animation" id="Animation_3mfjp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Holder:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Holder:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.624012, 0, -0.908134)]
+}
+
+[sub_resource type="Animation" id="Animation_635om"]
+resource_name = "pickaxeSwing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Holder:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.638372, 0, 0), Vector3(-1.42056, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Holder:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.624012, 0, -0.908134), Vector3(0.624012, 0.805759, 0.246331), Vector3(0.624012, 0.0539406, -1.01859), Vector3(0.624012, 0, -0.908134)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"mine"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Holder/pickaxe/GPUParticles3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Holder/badpickaxe/GPUParticles3D2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.466667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_rkdoi"]
+resource_name = "pickaxeWhiff"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Holder:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.638372, 0, 0), Vector3(-1.42056, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Holder:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.624012, 0, -0.908134), Vector3(0.624012, 0.805759, 0.246331), Vector3(0.624012, 0.0539406, -1.01859), Vector3(0.624012, 0, -0.908134)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_idkve"]
+_data = {
+"RESET": SubResource("Animation_3mfjp"),
+"pickaxeSwing": SubResource("Animation_635om"),
+"pickaxeWhiff": SubResource("Animation_rkdoi")
+}
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_7lobt")
@@ -14,19 +192,164 @@ script = ExtResource("1_7lobt")
 shape = SubResource("CapsuleShape3D_5tg7b")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 512
 mesh = SubResource("CapsuleMesh_w0k4t")
 
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00435126, -2.38419e-07, -0.00237703)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.569497, 0)
-spring_length = 5.0
-
-[node name="Camera3D" type="Camera3D" parent="Pivot/SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.651568, 0)
+cull_mask = 1048063
+fov = 70.0
+near = 0.1
 
 [node name="Holder" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.624012, 0, -0.908134)
 
+[node name="badpickaxe" parent="Holder" instance=ExtResource("2_ojdix")]
+transform = Transform3D(-8.06712e-09, 0, -0.184554, 0, 0.184554, 0, 0.184554, 0, -8.06712e-09, 0, 0, 0)
+visible = false
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Holder/badpickaxe"]
+transform = Transform3D(-2.43787e-07, 1.61591e-08, 5.41846, 0, 5.41847, 1.24803e-08, -5.41847, 4.16323e-08, -2.30541e-07, -2.14894, 2.12238, 0.0222185)
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_yrf58")
+draw_pass_1 = SubResource("SphereMesh_2jqm7")
+
 [node name="pickaxe" parent="Holder" instance=ExtResource("2_6pxmt")]
 transform = Transform3D(-0.00025594, -0.000567085, 0.183994, 0.000354215, 0.183994, 0.000567577, -0.183995, 0.000355002, -0.000254848, 0, 0, 0)
+visible = false
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Holder/pickaxe"]
+transform = Transform3D(-0.00756009, 0.0104629, -5.4349, -0.0167508, 5.43489, 0.0104862, 5.4349, 0.0167653, -0.00752776, 2.15959, 2.12472, -0.0127335)
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_yrf58")
+draw_pass_1 = SubResource("SphereMesh_2jqm7")
+
+[node name="appleespresso" parent="Holder" instance=ExtResource("4_816ju")]
+transform = Transform3D(-0.105328, 0, -9.20807e-09, 0, 0.105328, 0, 9.20807e-09, 0, -0.105328, 0, -0.330699, 0)
+visible = false
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -454.0
+offset_top = 59.0
+offset_right = -87.0
+offset_bottom = 117.0
+grow_horizontal = 0
+theme = SubResource("Theme_cqxmw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_f2ys6")
+
+[node name="ResourceLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -367.0
+offset_top = 69.0
+offset_right = -186.0
+offset_bottom = 111.0
+grow_horizontal = 0
+text = "Resources: 0"
+label_settings = SubResource("LabelSettings_h6sv4")
+
+[node name="Pause" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/Pause"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.025
+anchor_top = -1.65
+anchor_right = -1.025
+anchor_bottom = -1.65
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.30465, 6.09916)
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjylf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UI/Pause"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -65.0
+offset_right = 63.0
+offset_bottom = -23.0
+text = "Pause
+"
+label_settings = SubResource("LabelSettings_pejck")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause"]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -13.0
+offset_right = 11.0
+offset_bottom = 27.0
+scale = Vector2(1.4637, 1.42113)
+
+[node name="Resume" type="Button" parent="UI/Pause/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="UI/Pause/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="UI/Pause/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Area3D" type="Area3D" parent="." groups=["player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.30067, 0, 0, 0, 1.30067, 0, 0, 0, 1.30067, 0, 0.163469, 0)
+shape = SubResource("BoxShape3D_pai8x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_idkve")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_ladll")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+
+[connection signal="button_down" from="UI/Pause/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="UI/Pause/VBoxContainer/Restart" to="." method="_on_restart_button_down"]
+[connection signal="button_down" from="UI/Pause/VBoxContainer/Quit" to="." method="_on_quit_button_down"]

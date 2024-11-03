@@ -42,7 +42,7 @@ environment = SubResource("Environment_0s4h5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.45203, 0.892003, 0, -0.892003, 0.45203, 0, 6.18871, 0)
-light_energy = 4.011
+light_energy = 1.172
 
 [node name="Rock" parent="." instance=ExtResource("4_gh8ls")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9919, 0.703185, 2.81953)

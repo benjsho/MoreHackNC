@@ -1,5 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpm3jl0efuge8"]
+[gd_scene load_steps=3 format=3 uid="uid://bpm3jl0efuge8"]
 
 [ext_resource type="PackedScene" uid="uid://cuym4juwl4mag" path="res://models/hut3.glb" id="1_0p5m8"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ba6yv"]
+
 [node name="hut3" instance=ExtResource("1_0p5m8")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(9.34375, 0, 0, 0, 9.34375, 0, 0, 0, 9.34375, 0, 0.841991, 0)
+shape = SubResource("BoxShape3D_ba6yv")

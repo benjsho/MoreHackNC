@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		animPlayer.play("pickaxeSwing")
 		updateResources();
 
-	if Input.is_action_just_pressed("Interact") and canTalk and pickaxeEnabled:
+	if Input.is_action_just_pressed("Interact") and canTalk:
 		match npcTalk:
 			1:
 				if (resources >= 100):
@@ -79,7 +79,8 @@ func _physics_process(delta: float) -> void:
 						pass
 					_:
 						print_debug("Error" + str(dealLevel))
-
+	else:
+		print_debug("error")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

@@ -1,3 +1,4 @@
-join Jerry (boss_apple_portrait) center
-Jerry (boss_apple_portrait): get a move on, lazybones. i still need those resources by sundown.
+join Jerry (boss_face) center
+Jerry (boss_apple_portrait): get a move on, lazybones. i still need those resources by sundown. \
+('click' while near rocks to mine them)
 [end_timeline]

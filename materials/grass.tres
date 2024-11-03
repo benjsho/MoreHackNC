@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://rk76xmrvwd81"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cwtmgn8ly7abg"]
 
-[ext_resource type="Shader" uid="uid://dn66tp5hjywfv" path="res://materials/grassy.tres" id="1_sb4m4"]
+[ext_resource type="Shader" uid="uid://dx11a54j8l6t8" path="res://materials/grassy.tres" id="1_sb4m4"]
 
 [resource]
 render_priority = 0

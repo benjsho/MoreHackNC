@@ -12,6 +12,7 @@ Jerry (boss_apple_portrait): hey bucko.  you ate too many APPLES and passed out 
 	- No
 		Jerry (boss_apple_portrait): you're lying. get on your feet, and get me ONE HUNDRED resources by the end of the day.
 		- Shucks!
-Jerry (boss_apple_portrait): one more thing! you were about to forget your lucky pickaxe! here you go.
+Jerry (boss_apple_portrait): one more thing! you were about to forget your lucky pickaxe! here you go.\
+('click' while near rocks to mine them)
 [signal arg="openPick"]
 [end_timeline]

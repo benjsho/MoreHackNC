@@ -75,6 +75,10 @@ project/assembly_name="New Game Project"
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 rock=""

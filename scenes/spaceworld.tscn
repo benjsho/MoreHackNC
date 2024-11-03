@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0ltesqphdv4n"]
+[gd_scene load_steps=16 format=3 uid="uid://d0ltesqphdv4n"]
 
 [ext_resource type="Material" uid="uid://rk76xmrvwd81" path="res://materials/grass.tres" id="1_qxy0m"]
 [ext_resource type="PackedScene" uid="uid://jgutj4csilqx" path="res://scenes/player.tscn" id="2_xtn6o"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dulb1myyv4gdf" path="res://wall.tscn" id="10_feepy"]
 [ext_resource type="PackedScene" uid="uid://dks6jnj3sfshy" path="res://door.tscn" id="11_ernva"]
 [ext_resource type="PackedScene" uid="uid://dmacef2euyjtn" path="res://scenes/NPC2.tscn" id="11_f3gg6"]
+[ext_resource type="PackedScene" uid="uid://djw0wtb0pdv7v" path="res://sign.tscn" id="12_6d0d1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2f72h"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -35,7 +36,7 @@ use_collision = true
 size = Vector3(1, 0.0814209, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_xtn6o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0444277, 0.933555, 0.146581)
+transform = Transform3D(-0.81814, 0, -0.57502, 0, 1, 0, 0.57502, 0, -0.81814, -11.959, 0.933555, -7.49563)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0s4h5")
@@ -130,6 +131,9 @@ transform = Transform3D(2.21311, 0, 0, 0, 2.21311, 0, 0, 0, 2.21311, 4.98719, 1.
 
 [node name="Door" parent="." instance=ExtResource("11_ernva")]
 transform = Transform3D(1.3211, 0, 0, 0, 1.3211, 0, 0, 0, 1.3211, -26.7105, 0.045753, 2.51848)
+
+[node name="Sign" parent="." instance=ExtResource("12_6d0d1")]
+transform = Transform3D(0.190151, 0, -0.14483, 0, 0.239026, 0, 0.14483, 0, 0.190151, 12.8533, 0.382466, -17.5257)
 
 [connection signal="area_entered" from="Rock" to="Player" method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rock" to="Player" method="_on_rock_area_exited"]

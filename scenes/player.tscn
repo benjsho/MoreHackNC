@@ -1,7 +1,17 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=5 format=3 uid="uid://jgutj4csilqx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7lobt"]
 [ext_resource type="PackedScene" uid="uid://bb2ecrn6ab3e7" path="res://models/pickaxe.glb" id="2_6pxmt"]
+=======
+[gd_scene load_steps=21 format=3 uid="uid://jgutj4csilqx"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_7lobt"]
+[ext_resource type="PackedScene" uid="uid://bb2ecrn6ab3e7" path="res://models/pickaxe.glb" id="2_6pxmt"]
+[ext_resource type="PackedScene" uid="uid://dqbf6lhobmetx" path="res://models/badpickaxe.glb" id="2_ojdix"]
+[ext_resource type="PackedScene" uid="uid://dl6s1edi1kwr4" path="res://models/appleespresso.glb" id="4_816ju"]
+[ext_resource type="AudioStream" uid="uid://ceamvtcxafsmu" path="res://Music/Depths of Apple Planet.mp3" id="5_i2j4p"]
+>>>>>>> Stashed changes
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5tg7b"]
 
@@ -9,6 +19,8 @@
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_7lobt")
+xSens = null
+ySens = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_5tg7b")
@@ -30,3 +42,137 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.624012, 0, -0.908134)
 
 [node name="pickaxe" parent="Holder" instance=ExtResource("2_6pxmt")]
 transform = Transform3D(-0.00025594, -0.000567085, 0.183994, 0.000354215, 0.183994, 0.000567577, -0.183995, 0.000355002, -0.000254848, 0, 0, 0)
+<<<<<<< Updated upstream
+=======
+visible = false
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Holder/pickaxe"]
+transform = Transform3D(-0.00756009, 0.0104629, -5.4349, -0.0167508, 5.43489, 0.0104862, 5.4349, 0.0167653, -0.00752776, 2.15959, 2.12472, -0.0127335)
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_yrf58")
+draw_pass_1 = SubResource("SphereMesh_2jqm7")
+
+[node name="appleespresso" parent="Holder" instance=ExtResource("4_816ju")]
+transform = Transform3D(-0.105328, 0, -9.20807e-09, 0, 0.105328, 0, 9.20807e-09, 0, -0.105328, 0, -0.330699, 0)
+visible = false
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -454.0
+offset_top = 59.0
+offset_right = -87.0
+offset_bottom = 117.0
+grow_horizontal = 0
+theme = SubResource("Theme_cqxmw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_f2ys6")
+
+[node name="ResourceLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -367.0
+offset_top = 69.0
+offset_right = -186.0
+offset_bottom = 111.0
+grow_horizontal = 0
+text = "Resources: 0"
+label_settings = SubResource("LabelSettings_h6sv4")
+
+[node name="Pause" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/Pause"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.025
+anchor_top = -1.65
+anchor_right = -1.025
+anchor_bottom = -1.65
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.30465, 6.09916)
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjylf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UI/Pause"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -65.0
+offset_right = 63.0
+offset_bottom = -23.0
+text = "Pause
+"
+label_settings = SubResource("LabelSettings_pejck")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause"]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -13.0
+offset_right = 11.0
+offset_bottom = 27.0
+scale = Vector2(1.4637, 1.42113)
+
+[node name="Resume" type="Button" parent="UI/Pause/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="UI/Pause/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="UI/Pause/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Area3D" type="Area3D" parent="." groups=["player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.30067, 0, 0, 0, 1.30067, 0, 0, 0, 1.30067, 0, 0.163469, 0)
+shape = SubResource("BoxShape3D_pai8x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_idkve")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_i2j4p")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+
+[connection signal="button_down" from="UI/Pause/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="UI/Pause/VBoxContainer/Restart" to="." method="_on_restart_button_down"]
+[connection signal="button_down" from="UI/Pause/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
+>>>>>>> Stashed changes

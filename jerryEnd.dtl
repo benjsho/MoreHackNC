@@ -1,0 +1,16 @@
+join Jerry (boss_apple_portrait) center
+Jerry (boss_apple_portrait): hey you got the resouces. good job! hand them over.
+- yes boss :)
+	[signal arg="enableJump"]
+	Jerry (boss_apple_portrait): i got a reward though! have my trusty springy boots. good for any occasion.
+	- thank you bro <3
+		Jerry (boss_apple_portrait): woah there bucko. seems like they work. have fun with them, and i'll see you tommorow.
+		- ok :)
+			[end_timeline]
+- fine
+	[signal arg="enableJump"]
+	Jerry (boss_apple_portrait): i got a reward though! have my trusty springy boots. good for any occasion.
+	- thank you bro <3
+		Jerry (boss_apple_portrait): woah there bucko. seems like they work. have fun with them, and i'll see you tommorow.
+		- ok :)
+			[end_timeline]
